@@ -18,17 +18,12 @@ class LtsmSlideAnimationView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              //TODO: Buat variabel animate di dalam State/Controller
-              // bool animate = false;
               AnimatedContainer(
                 duration: const Duration(milliseconds: 100),
                 height: 100.0,
                 width: 100.0,
-                margin: const EdgeInsets.only(
-                  //TODO:
-                  //jika animate == true, atur left menjadi 200
-                  //jika animate == false, atur left menjadi 0
-                  left: 0.0,
+                margin: EdgeInsets.only(
+                  left: controller.animate ? 200 : 0,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.red[200],
@@ -42,17 +37,16 @@ class LtsmSlideAnimationView extends StatefulWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              //TODO:
-              //di dalam event onPressed(),
-              //atur animate = true, jika nilai animate adalah false
-              //atur animate = false, jika nilai animate adalah true
               ElevatedButton.icon(
                 icon: const Icon(Icons.animation),
-                label: const Text("Animate"),
+                label: Text("Animate : ${controller.animate}"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueGrey,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  controller.animate = !controller.animate ? true : false;
+                  controller.setState(() {});
+                },
               ),
             ],
           ),

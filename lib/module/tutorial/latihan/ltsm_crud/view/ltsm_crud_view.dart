@@ -16,20 +16,22 @@ class LtsmCrudView extends StatefulWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          //TODO: tambahkan map ini ke dalam products list
-          //gunakan: controller.products.add()
-          // jgn lupa panggil setState setelah-nya
-          /*
+          controller.products.add(
+              //TODO: tambahkan map ini ke dalam products list
+              //gunakan: controller.products.add()
+              // jgn lupa panggil setState setelah-nya
+              /*
           */
-          Map newProduct = {
-            "photo":
-                "https://i.ibb.co/dG68KJM/photo-1513104890138-7c749659a591-crop-entropy-cs-tinysrgb-fit-max-fm-jpg-ixid-Mnwy-ODA4-ODh8-MHwxf-H.jpg",
-            "product_name": "New Product",
-            "price": 25,
-            "category": "Food",
-            "description":
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          };
+              {
+                "photo":
+                    "https://i.ibb.co/dG68KJM/photo-1513104890138-7c749659a591-crop-entropy-cs-tinysrgb-fit-max-fm-jpg-ixid-Mnwy-ODA4-ODh8-MHwxf-H.jpg",
+                "product_name": "New Product",
+                "price": 25,
+                "category": "Food",
+                "description":
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              });
+          controller.setState(() {});
         },
       ),
       body: Container(
@@ -47,7 +49,10 @@ class LtsmCrudView extends StatefulWidget {
                   //panggil kode itu di dalam event onTap()
                   // jgn lupa panggil setState setelah-nya
                   return InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      controller.products.removeAt(index);
+                      controller.setState(() {});
+                    },
                     child: Card(
                       child: ListTile(
                         leading: CircleAvatar(
@@ -60,6 +65,8 @@ class LtsmCrudView extends StatefulWidget {
                         subtitle: Text("${item["price"]} USD"),
                         trailing: IconButton(
                           onPressed: () {
+                            item["price"] = item["price"] = 44;
+                            controller.setState(() {});
                             //TODO: update harga item ketika di klik
                             //gunakan kode ini:
                             // item["price"] = 44;

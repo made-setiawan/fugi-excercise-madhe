@@ -24,20 +24,21 @@ class LtfmLoginView extends StatefulWidget {
                 hint: "Your email",
                 onChanged: (value) {},
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              QTextField(
+                  label: "Password",
+                  value: "123456",
+                  obscure: true,
+                  hint: "Your password",
+                  onChanged: (value) {}),
 
               //! 2. Buat kode yang sama, atur value-nya menjadi:
               // value: 123456
               // hint: Your password
               // label: Password
               // obscure: true
-
-              QTextField(
-                value: "123456",
-                label: "Password",
-                hint: "Your password",
-                obscure: true,
-                onChanged: (value) {},
-              ),
 
               //! 3. Buat sebuah tombol,
               //gunakan icon: Icons.login

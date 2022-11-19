@@ -18,13 +18,12 @@ class LtsmRotateAnimationView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              //TODO: Buat variabel animate di dalam State/Controller
-              // bool animate = false;
               AnimatedRotation(
                 //TODO:
                 //jika animate == true, atur derajat rotasinya menjadi 90
                 //jika animate == false, atur opacity menjadi 0
-                turns: 15 / 360,
+                turns: (controller.animate ? 180 : 0) / 360,
+                // turns: (controller.animate ? 90 : 0),
                 duration: const Duration(milliseconds: 2000),
                 child: Container(
                   height: 100.0,
@@ -49,11 +48,14 @@ class LtsmRotateAnimationView extends StatefulWidget {
               //atur animate = false, jika nilai animate adalah true
               ElevatedButton.icon(
                 icon: const Icon(Icons.animation),
-                label: const Text("Animate"),
+                label: Text("Animate : ${controller.animate}"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueGrey,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  controller.animate = controller.animate ? false : true;
+                  controller.setState(() {});
+                },
               ),
             ],
           ),

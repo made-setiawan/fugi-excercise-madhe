@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:example/core.dart';
-import '../controller/ltfm_sign_up_controller.dart';
 
 class LtfmSignUpView extends StatefulWidget {
   const LtfmSignUpView({Key? key}) : super(key: key);
@@ -17,7 +16,56 @@ class LtfmSignUpView extends StatefulWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: const [
+            //  value: "123456",
+            //     label: "Password",
+            //     hint: "Your password",
+            //     obscure: true,
+            //     onChanged: (value) {},
+
+            children: [
+              QTextField(
+                value: "made@gmail.com",
+                label: "email",
+                hint: "Your email",
+                onChanged: (value) {},
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              QTextField(
+                value: "password",
+                label: "Password",
+                hint: "Your password",
+                obscure: true,
+                onChanged: (value) {},
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              QTextField(
+                value: "confirm password",
+                label: "confirm password",
+                hint: "Your confirm password",
+                obscure: true,
+                onChanged: (value) {},
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(
+                  Icons.signpost,
+                ),
+                label: const Text(
+                  "Sign Up",
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                ),
+                onPressed: () {
+                  controller.doSignUp();
+                },
+              ),
               //! 1. Buatlah textfield email
               //! 2. Buatlah textfield password
               //! 3. Buatlah textfield confirm password
