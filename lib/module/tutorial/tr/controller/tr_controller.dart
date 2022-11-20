@@ -241,7 +241,7 @@ class TrController extends State<TrView> implements MvcController {
     },
     {
       "label": "Product Form",
-      "view": const LtfmProductFormView(),
+      "view":const LtfmProductFormView(),
     },
     {
       "label": "Review Form",

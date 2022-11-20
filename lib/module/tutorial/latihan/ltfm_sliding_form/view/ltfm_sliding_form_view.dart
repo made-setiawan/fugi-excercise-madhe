@@ -28,12 +28,62 @@ class LtfmSlidingFormView extends StatefulWidget {
                 child: Container(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         "Apply Leave",
                         style: TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () async {
+                          DateTime? pickedDate = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(2000),
+                            lastDate: DateTime(2100),
+                          );
+                          print("pickedDate: $pickedDate");
+                        },
+                        child: TextFormField(
+                          initialValue: '2022-08-01',
+                          maxLength: 20,
+                          enabled: false,
+                          decoration: const InputDecoration(
+                              labelText: 'Leave Date',
+                              labelStyle: TextStyle(
+                                color: Colors.blueGrey,
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.blueGrey,
+                                ),
+                              ),
+                              suffixIcon: Icon(Icons.date_range)),
+                          onChanged: (value) {},
+                        ),
+                      ),
+                      const TextField(
+                        maxLines: 8, //or null
+                        decoration: InputDecoration(
+                          hintText: "Reason",
+                        ),
+                      ),
+                      const Divider(),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 40,
+                        child: ElevatedButton.icon(
+                          icon: const Icon(Icons.save),
+                          label: const Text("Submit"),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blueGrey,
+                          ),
+                          onPressed: () {
+                            controller.submitted = !controller.submitted;
+                            controller.update();
+                          },
                         ),
                       ),
                       //! 1. buat datepicker, atur label-nya menjadi

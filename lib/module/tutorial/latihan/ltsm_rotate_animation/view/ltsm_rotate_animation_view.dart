@@ -19,7 +19,7 @@ class LtsmRotateAnimationView extends StatefulWidget {
           child: Column(
             children: [
               AnimatedRotation(
-                //TODO:
+                //
                 //jika animate == true, atur derajat rotasinya menjadi 90
                 //jika animate == false, atur opacity menjadi 0
                 turns: (controller.animate ? 180 : 0) / 360,
@@ -42,7 +42,7 @@ class LtsmRotateAnimationView extends StatefulWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              //TODO:
+              //
               //di dalam event onPressed(),
               //atur animate = true, jika nilai animate adalah false
               //atur animate = false, jika nilai animate adalah true

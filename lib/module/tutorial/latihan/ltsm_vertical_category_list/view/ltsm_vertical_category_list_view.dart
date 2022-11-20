@@ -18,7 +18,7 @@ class LtsmVerticalCategoryListView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              //TODO: Buat variabel selectedIndex di dalam State/Controller
+              // Buat variabel selectedIndex di dalam State/Controller
               // int selectedIndex = 0;
               SizedBox(
                 child: ListView.builder(
@@ -26,7 +26,7 @@ class LtsmVerticalCategoryListView extends StatefulWidget {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     bool selected = controller.selectedIndex == index;
-                    //TODO: Atur selectedIndex = index did alam event onTap()
+                    // Atur selectedIndex = index did alam event onTap()
                     //! Panggil controller.setState((){}); setelah-nya
                     return InkWell(
                       onTap: () {
@@ -35,7 +35,7 @@ class LtsmVerticalCategoryListView extends StatefulWidget {
                       },
                       child: Card(
                         color: selected ? Colors.green : Colors.grey,
-                        //TODO: Atur warna card, jika selectedIndex == index,
+                        //Atur warna card, jika selectedIndex == index,
                         //! Maka warnanya orange,
                         //! Jika tidak, warnanya grey
                         child: Padding(

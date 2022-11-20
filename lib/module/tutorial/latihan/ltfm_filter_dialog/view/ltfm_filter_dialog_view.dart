@@ -71,6 +71,90 @@ class LtfmFilterDialogView extends StatefulWidget {
                         backgroundColor: Colors.blueGrey,
                       ),
                       onPressed: () async {
+                        await showDialog<void>(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text('Filter'),
+                              content: SingleChildScrollView(
+                                child: ListBody(
+                                  children: <Widget>[
+                                    InkWell(
+                                      onTap: () async {
+                                        DateTime? pickedDate =
+                                            await showDatePicker(
+                                          context: context,
+                                          initialDate: DateTime.now(),
+                                          firstDate: DateTime(2000),
+                                          lastDate: DateTime(2100),
+                                        );
+                                        print("pickedDate: $pickedDate");
+                                      },
+                                      child: TextFormField(
+                                        initialValue: '2022-08-01',
+                                        maxLength: 20,
+                                        enabled: false,
+                                        decoration: const InputDecoration(
+                                            labelText: 'from',
+                                            labelStyle: TextStyle(
+                                              color: Colors.blueGrey,
+                                            ),
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Colors.blueGrey,
+                                              ),
+                                            ),
+                                            suffixIcon: Icon(Icons.date_range)),
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () async {
+                                        DateTime? pickedDate =
+                                            await showDatePicker(
+                                          context: context,
+                                          initialDate: DateTime.now(),
+                                          firstDate: DateTime(2000),
+                                          lastDate: DateTime(2100),
+                                        );
+                                        print("pickedDate: $pickedDate");
+                                      },
+                                      child: TextFormField(
+                                        initialValue: '2022-08-01',
+                                        maxLength: 20,
+                                        enabled: false,
+                                        decoration: const InputDecoration(
+                                            labelText: 'to',
+                                            labelStyle: TextStyle(
+                                              color: Colors.blueGrey,
+                                            ),
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Colors.blueGrey,
+                                              ),
+                                            ),
+                                            suffixIcon: Icon(Icons.date_range)),
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blueGrey,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text("Filter"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                         //! 1. Tampilkan dialog, gunakan kode ini:
                         /*
                         await showDialog<void>(

@@ -17,7 +17,7 @@ class LtsmCrudView extends StatefulWidget {
         child: const Icon(Icons.add),
         onPressed: () {
           controller.products.add(
-              //TODO: tambahkan map ini ke dalam products list
+              //tambahkan map ini ke dalam products list
               //gunakan: controller.products.add()
               // jgn lupa panggil setState setelah-nya
               /*
@@ -43,7 +43,7 @@ class LtsmCrudView extends StatefulWidget {
                 itemCount: controller.products.length,
                 itemBuilder: (context, index) {
                   var item = controller.products[index];
-                  //TODO: hapus item dari list
+                  //hapus item dari list
                   //gunakan: controller.products.remove(item) atau
                   //gunakan: controller.products.removeAt(index) atau
                   //panggil kode itu di dalam event onTap()
@@ -67,7 +67,7 @@ class LtsmCrudView extends StatefulWidget {
                           onPressed: () {
                             item["price"] = item["price"] = 44;
                             controller.setState(() {});
-                            //TODO: update harga item ketika di klik
+                            //update harga item ketika di klik
                             //gunakan kode ini:
                             // item["price"] = 44;
                             // jgn lupa panggil setState setelah-nya

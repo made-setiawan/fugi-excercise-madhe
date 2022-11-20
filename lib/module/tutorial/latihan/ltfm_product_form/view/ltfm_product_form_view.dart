@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:example/core.dart';
 
 class LtfmProductFormView extends StatefulWidget {
-  LtfmProductFormView({Key? key}) : super(key: key);
+ const LtfmProductFormView({Key? key}) : super(key: key);
 
   Widget build(context, LtfmProductFormController controller) {
     controller.view = this;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("LtfmProductForm"),
+        title: const Text("LtfmProductForm"),
         actions: [
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blueGrey,
@@ -20,7 +20,7 @@ class LtfmProductFormView extends StatefulWidget {
               onPressed: () {
                 controller.save();
               },
-              child: Text("Save"),
+              child: const Text("Save"),
             ),
           ),
           //! 5. Tambahkan tombol Save
@@ -30,24 +30,24 @@ class LtfmProductFormView extends StatefulWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Card(
             child: Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: "product name",
                     ),
                   ),
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: "price",
                     ),
                     keyboardType: TextInputType.number,
                   ),
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: "description",
                     ),
@@ -66,7 +66,7 @@ class LtfmProductFormView extends StatefulWidget {
                     label: "Category",
                     hint: "Your product category",
                     validator: Validator.required,
-                    items: [
+                    items: const [
                       {
                         "label": "Food",
                         "value": 1,
@@ -85,7 +85,7 @@ class LtfmProductFormView extends StatefulWidget {
                   QRadioField(
                     label: "Status",
                     validator: Validator.atLeastOneitem,
-                    items: [
+                    items: const [
                       {
                         "label": "Published",
                         "value": "published",
