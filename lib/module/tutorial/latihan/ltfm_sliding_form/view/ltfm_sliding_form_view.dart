@@ -36,34 +36,39 @@ class LtfmSlidingFormView extends StatefulWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      InkWell(
-                        onTap: () async {
-                          DateTime? pickedDate = await showDatePicker(
-                            context: context,
-                            initialDate: DateTime.now(),
-                            firstDate: DateTime(2000),
-                            lastDate: DateTime(2100),
-                          );
-                          print("pickedDate: $pickedDate");
-                        },
-                        child: TextFormField(
-                          initialValue: '2022-08-01',
-                          maxLength: 20,
-                          enabled: false,
-                          decoration: const InputDecoration(
-                              labelText: 'Leave Date',
-                              labelStyle: TextStyle(
-                                color: Colors.blueGrey,
-                              ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.blueGrey,
-                                ),
-                              ),
-                              suffixIcon: Icon(Icons.date_range)),
-                          onChanged: (value) {},
-                        ),
+                      QDatePicker(
+                        label: "Leave Date",
+                        value: DateTime.now(),
+                        onChanged: (v) {},
                       ),
+                      // InkWell(
+                      //   onTap: () async {
+                      //     DateTime? pickedDate = await showDatePicker(
+                      //       context: context,
+                      //       initialDate: DateTime.now(),
+                      //       firstDate: DateTime(2000),
+                      //       lastDate: DateTime(2100),
+                      //     );
+                      //     print("pickedDate: $pickedDate");
+                      //   },
+                      //   child: TextFormField(
+                      //     initialValue: '2022-08-01',
+                      //     maxLength: 20,
+                      //     enabled: false,
+                      //     decoration: const InputDecoration(
+                      //         labelText: 'Leave Date',
+                      //         labelStyle: TextStyle(
+                      //           color: Colors.blueGrey,
+                      //         ),
+                      //         enabledBorder: UnderlineInputBorder(
+                      //           borderSide: BorderSide(
+                      //             color: Colors.blueGrey,
+                      //           ),
+                      //         ),
+                      //         suffixIcon: Icon(Icons.date_range)),
+                      //     onChanged: (value) {},
+                      //   ),
+                      // ),
                       const TextField(
                         maxLines: 8, //or null
                         decoration: InputDecoration(

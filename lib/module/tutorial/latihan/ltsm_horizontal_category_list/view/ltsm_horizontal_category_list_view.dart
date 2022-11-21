@@ -35,7 +35,10 @@ class LtsmHorizontalCategoryListView extends StatefulWidget {
                         controller.setState(() {});
                       },
                       child: Card(
-                        color: isSelected ? Colors.orange : Colors.grey,
+                        // color: isSelected ? Colors.orange : Colors.grey,
+                        color: controller.selectedIndex == index
+                            ? Colors.orange
+                            : Colors.grey,
                         //Atur warna card, jika selectedIndex == index,
                         //! Maka warnanya orange,
                         //! Jika tidak, warnanya grey
@@ -74,7 +77,9 @@ class LtsmHorizontalCategoryListView extends StatefulWidget {
                       margin: const EdgeInsets.only(
                         right: 6.0,
                       ),
-                      color: isSelected ? Colors.orange : Colors.grey,
+                      color: controller.selectedIndex == index
+                          ? Colors.orange
+                          : Colors.grey,
                       //Atur warna button, jika selectedIndex == index,
                       //! Maka warnanya orange,
                       //! Jika tidak, warnanya grey
@@ -90,7 +95,9 @@ class LtsmHorizontalCategoryListView extends StatefulWidget {
                           ),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blueGrey,
+                          backgroundColor: controller.selectedIndex == index
+                              ? Colors.orange
+                              : Colors.grey,
                         ),
                         onPressed: () {
                           controller.selectedIndex = index;

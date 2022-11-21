@@ -80,64 +80,75 @@ class LtfmFilterDialogView extends StatefulWidget {
                               content: SingleChildScrollView(
                                 child: ListBody(
                                   children: <Widget>[
-                                    InkWell(
-                                      onTap: () async {
-                                        DateTime? pickedDate =
-                                            await showDatePicker(
-                                          context: context,
-                                          initialDate: DateTime.now(),
-                                          firstDate: DateTime(2000),
-                                          lastDate: DateTime(2100),
-                                        );
-                                        print("pickedDate: $pickedDate");
-                                      },
-                                      child: TextFormField(
-                                        initialValue: '2022-08-01',
-                                        maxLength: 20,
-                                        enabled: false,
-                                        decoration: const InputDecoration(
-                                            labelText: 'from',
-                                            labelStyle: TextStyle(
-                                              color: Colors.blueGrey,
-                                            ),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Colors.blueGrey,
-                                              ),
-                                            ),
-                                            suffixIcon: Icon(Icons.date_range)),
-                                        onChanged: (value) {},
-                                      ),
+                                    QDatePicker(
+                                      label: "from",
+                                      value: DateTime.now(),
+                                      onChanged: (v) {},
                                     ),
-                                    InkWell(
-                                      onTap: () async {
-                                        DateTime? pickedDate =
-                                            await showDatePicker(
-                                          context: context,
-                                          initialDate: DateTime.now(),
-                                          firstDate: DateTime(2000),
-                                          lastDate: DateTime(2100),
-                                        );
-                                        print("pickedDate: $pickedDate");
-                                      },
-                                      child: TextFormField(
-                                        initialValue: '2022-08-01',
-                                        maxLength: 20,
-                                        enabled: false,
-                                        decoration: const InputDecoration(
-                                            labelText: 'to',
-                                            labelStyle: TextStyle(
-                                              color: Colors.blueGrey,
-                                            ),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Colors.blueGrey,
-                                              ),
-                                            ),
-                                            suffixIcon: Icon(Icons.date_range)),
-                                        onChanged: (value) {},
-                                      ),
+                                    QDatePicker(
+                                      label: "to",
+                                      value: DateTime.now(),
+                                      onChanged: (v) {},
                                     ),
+                                    // InkWell(
+                                    //   onTap: () async {
+                                    //     DateTime? pickedDate =
+                                    //         await showDatePicker(
+                                    //       context: context,
+                                    //       initialDate: DateTime.now(),
+                                    //       firstDate: DateTime(2000),
+                                    //       lastDate: DateTime(2100),
+                                    //     );
+
+                                    //     print("pickedDate: $pickedDate");
+                                    //   },
+                                    //   child: TextFormField(
+                                    //     initialValue: '2022-08-01',
+                                    //     maxLength: 20,
+                                    //     enabled: false,
+                                    //     decoration: const InputDecoration(
+                                    //         labelText: 'from',
+                                    //         labelStyle: TextStyle(
+                                    //           color: Colors.blueGrey,
+                                    //         ),
+                                    //         enabledBorder: UnderlineInputBorder(
+                                    //           borderSide: BorderSide(
+                                    //             color: Colors.blueGrey,
+                                    //           ),
+                                    //         ),
+                                    //         suffixIcon: Icon(Icons.date_range)),
+                                    //     onChanged: (value) {},
+                                    //   ),
+                                    // ),
+                                    // InkWell(
+                                    //   onTap: () async {
+                                    //     DateTime? pickedDate =
+                                    //         await showDatePicker(
+                                    //       context: context,
+                                    //       initialDate: DateTime.now(),
+                                    //       firstDate: DateTime(2000),
+                                    //       lastDate: DateTime(2100),
+                                    //     );
+                                    //     print("pickedDate: $pickedDate");
+                                    //   },
+                                    //   child: TextFormField(
+                                    //     initialValue: '2022-08-01',
+                                    //     maxLength: 20,
+                                    //     enabled: false,
+                                    //     decoration: const InputDecoration(
+                                    //         labelText: 'to',
+                                    //         labelStyle: TextStyle(
+                                    //           color: Colors.blueGrey,
+                                    //         ),
+                                    //         enabledBorder: UnderlineInputBorder(
+                                    //           borderSide: BorderSide(
+                                    //             color: Colors.blueGrey,
+                                    //           ),
+                                    //         ),
+                                    //         suffixIcon: Icon(Icons.date_range)),
+                                    //     onChanged: (value) {},
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),

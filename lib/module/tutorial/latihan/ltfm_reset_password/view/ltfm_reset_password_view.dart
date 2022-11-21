@@ -22,7 +22,7 @@ class LtfmResetPasswordView extends StatefulWidget {
                   label: "Email",
                   hint: "Your email",
                   validator: Validator.email,
-                  value: "demo@gmail.com",
+                  value: "made@gmail.com",
                   onChanged: (value) {},
                 ),
                 const SizedBox(
@@ -34,7 +34,9 @@ class LtfmResetPasswordView extends StatefulWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueGrey,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.doResetPwd();
+                  },
                 ),
                 const SizedBox(
                   height: 20.0,
